@@ -2,11 +2,7 @@
 
 const app = new Vue({
 
-
     el: '#root',
-    methods: {},
-
-
 
     data: {
         active: 0,
@@ -39,6 +35,12 @@ const app = new Vue({
             },
         ]
 
+    },
+
+    methods: {
+        swipeUp(){},
+        swipeDown(){},
+        
     },
 })
 
