@@ -9,26 +9,28 @@ const app = new Vue({
 
 
     data: {
+        active: 0,
+        position: 0,
         paesi: [
             {
                 nome: 'Svezia',
                 foto: 'img/01.jpg',
-                testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+                testo: 'Lorem ipsum, dolor sit amet consecteEt temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
             },
             {
                 nome: 'Svizzera',
                 foto: 'img/02.jpg',
-                testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+                testo: 'Lorem ipsum, dolor sit amectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
             },
             {
                 nome: 'Gran Bretagna',
                 foto: 'img/03.jpg',
-                testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+                testo: 'Lorem ipsum, dolor sit amet csectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
             },
             {
                 nome: 'Germania',
                 foto: 'img/04.jpg',
-                testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+                testo: 'Lorem ipsum, dolor sit amet conseetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
             },
             {
                 nome: 'Paradise',
@@ -44,7 +46,21 @@ const app = new Vue({
 
 
 
+/* 
+v-model:
+stampa i value di elementi
+input e output,
 
+
+v-bind:
+ci permette di inserire una variabile
+all’interno di un attributo di un tag.
+----- v-bind:class=... = :class=... -----
+
+
+v-on:
+----- v-on:click=... = @click=... -----
+ */
 
 
 
