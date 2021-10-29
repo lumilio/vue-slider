@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document vue</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel='stylesheet' href="asset/css/style.css">
 </head>
@@ -14,15 +14,40 @@
     
 
     <div id="root">
+        <div id="mainbox">
+            <div id="centered-box">
 
-        <h1 v-bind:class='addClass'>{{name}}</h1>
-        <button v-on:click="changeColor">ciao</button>
 
-        
-        <input v-model="name" type='text' laceholder='name'>
-        <input v-model="surname" type='text' laceholder='name'>
-        <p>{{name}} {{surname}} {{counter}}</p>
-        
+                <div id="box-mainpic">
+                    <div v-for='paese in paesi' class="big-photo">
+                        <img :src="paese.foto" alt="">
+                        <div id="didascalia">
+                            <h3>{{paese.nome}}</h3>
+                            <p>{{paese.testo}}</p> 
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div id="box-column">  
+                    <div v-for='paese in paesi' class="lil-photo">
+                        <img :src="paese.foto" alt="">
+                    </div>
+
+
+                    
+                    <button id="swipe-up-button"><i class="fas fa-chevron-up"></i></i></button>
+                    <button id="swipe-down-button"><i class="fas fa-chevron-down"></i></button>  
+                </div>
+
+
+
+
+
+            </div>
+        </div>
     </div>
 
 
