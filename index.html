@@ -19,7 +19,7 @@
 
 
                 <div id="box-mainpic">
-                    <div class="big-photo" v-for='(paese, index) in paesi' v-bind:class ="(index == active)?'choice':''">
+                    <div v-for='(paese, index) in paesi' v-bind:class ="(index == active)?'choice':''" class="big-photo">
                         <img v-bind:src="paese.foto" alt="">
                         <div id="didascalia">
                             <h3>{{paese.nome}}</h3>

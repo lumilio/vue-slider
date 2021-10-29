@@ -6,14 +6,13 @@ const app = new Vue({
     data: {
 
         active: 0,
-        selected: 0,
-        addClass: 'choice',
+        /* addClass: 'choice',     -------------- inutile? */  
 
         paesi: [
             {
                 nome: 'Svezia',
                 foto: 'img/01.jpg',
-                testo: 'Lorem ipsum, dolor sit amet consecteEt temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+                testo: 'Loreit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
             },
             {
                 nome: 'Svizzera',
@@ -23,7 +22,7 @@ const app = new Vue({
             {
                 nome: 'Gran Bretagna',
                 foto: 'img/03.jpg',
-                testo: 'Lorem ipsum, dolor sit amet csectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+                testo: 'Lorbus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
             },
             {
                 nome: 'Germania',
@@ -33,11 +32,14 @@ const app = new Vue({
             {
                 nome: 'Paradise',
                 foto: 'img/05.jpg',
-                testo: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+                testo: 'Lorem voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
             },
         ]
 
     },
+
+
+
 
     methods: {
         
@@ -49,8 +51,19 @@ const app = new Vue({
                 this.active = 4;
             }
         },
-        swipeDown(){this.active++},  
+        swipeDown(){
+            if (this.active < 4){
+                ++this.active;
+            }
+            else if (this.active == 4){                                  //--------------------------------bonus
+                this.active = 0;
+            }
+        },  
     },
+
+
+
+
 })
 
 
