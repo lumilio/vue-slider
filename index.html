@@ -18,8 +18,8 @@
             <div id="centered-box">
 
 
-                <div id="box-mainpic">
-                    <div v-if='' v-for='paese in paesi' class="big-photo">
+                <div v-for='(paese, index) in paesi' id="box-mainpic">
+                    <div class="big-photo" v-bind:class ="(index == active)?'choice':''">
                         <img v-bind:src="paese.foto" alt="">
                         <div id="didascalia">
                             <h3>{{paese.nome}}</h3>
@@ -32,7 +32,7 @@
 
 
                 <div id="box-column">  
-                    <div v-if='' v-for='paese in paesi' class="lil-photo">
+                    <div v-for='(paese, index) in paesi' v-bind:class ="(index == active)?'choice':''" class="lil-photo">
                         <img v-bind:src="paese.foto" alt="">
                     </div>
                     <button v-on:click="swipeUp" id="swipe-up-button"><i class="fas fa-chevron-up"></i></i></button>
