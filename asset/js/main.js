@@ -1,12 +1,13 @@
 
-
 const app = new Vue({
 
     el: '#root',
 
     data: {
-        active: 0,
-        position: 0,
+
+        acrtive: 0,
+        selected: 0,
+        
         paesi: [
             {
                 nome: 'Svezia',
@@ -38,8 +39,35 @@ const app = new Vue({
     },
 
     methods: {
-        swipeUp(){},
-        swipeDown(){},
+        
+        swipeUp(){
+            if (position > 0){
+                --position;
+            }
+            else if (position == 0){                                             //--------------------------------bonus
+                position = items.length -1;
+            }
+            
+            document.querySelector('.lil-photo.choice').classList.remove('choice');
+            document.getElementsByClassName('lil-photo')[position].classList.add('choice');
+        
+            document.querySelector('.big-photo.choice').classList.remove('choice');
+            document.getElementsByClassName('big-photo')[position].classList.add('choice');
+        },
+
+        swipeDown(){
+            if (position < items.length -1){
+                ++position;
+            }
+            else if (position == items.length -1){                                  //--------------------------------bonus
+                position = 0;
+            }
+            document.querySelector('.lil-photo.choice').classList.remove('choice');
+            document.getElementsByClassName('lil-photo')[position].classList.add('choice');
+        
+            document.querySelector('.big-photo.choice').classList.remove('choice');
+            document.getElementsByClassName('big-photo')[position].classList.add('choice');
+        },
         
     },
 })
@@ -68,3 +96,5 @@ v-on:
 
 
 
+
+  
