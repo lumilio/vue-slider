@@ -41,7 +41,14 @@ const app = new Vue({
 
     methods: {
         
-        swipeUp(){this.active--},
+        swipeUp(){
+            if (this.active > 0){
+                --this.active;
+            }
+            else if (this.active == 0){                                             //--------------------------------bonus
+                this.active = 4;
+            }
+        },
         swipeDown(){this.active++},  
     },
 })
