@@ -7,6 +7,9 @@ const app = new Vue({
 
         active: 0,
         /* addClass: 'choice',     -------------- inutile? */  
+        buttonClass: "start",
+        buttonText: "START",
+        clicked: false,
 
         paesi: [
             {
@@ -45,20 +48,49 @@ const app = new Vue({
         
         
         
-        swipeUp(){
-            if (this.active > 0) {--this.active;}
-            else if (this.active == 0) {this.active = this.paesi.length -1;}
+        swipeUp: function () {
+            if (app.active > 0) {--app.active;}
+            else if (app.active == 0) {app.active = app.paesi.length -1;}
         },
-        swipeDown(){
-            if (this.active < this.paesi.length -1) {++this.active;}
-            else if (this.active == this.paesi.length -1) {this.active = 0;}
+        swipeDown: function () {
+            if (app.active < app.paesi.length -1) {++app.active;}
+            else if (app.active == app.paesi.length -1) {app.active = 0;}
         },
 
-        swipeAuto(){
-            setInterval(() => {
-                if (this.active < this.paesi.length -1) {++this.active;}
-                else if (this.active == this.paesi.length -1) { this.active = 0;}
-            }, 1000)      
+
+
+
+        swipeAuto: function() {
+            
+            if (app.clicked == false) {
+                app.clicked = true;
+                app.buttonClass = "stop"
+                app.buttonText = "STOP"
+            } else {
+                app.clicked = false
+                app.buttonClass = "start"
+                app.buttonText = "START"
+            }
+        
+            let clock = setInterval(function () {
+                if (app.clicked == true) {
+
+                    app.active++
+                    if (app.active == app.paesi.length) {
+                        app.active = 0;
+                    } else if (app.active < 0) {
+                        app.active = app.paesi.length;
+                    }
+
+
+                } else {
+                    clearInterval(clock)
+                }
+
+
+            }, 1000)
+            
+          
         },  
     },
 
@@ -66,7 +98,6 @@ const app = new Vue({
 
 
 })
-
 
 
 
