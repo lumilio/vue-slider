@@ -46,23 +46,19 @@ const app = new Vue({
         
         
         swipeUp(){
-            if (this.active > 0){  /* -------------- cosa seleziono con this? */ 
-                --this.active;
-            }
-            else if (this.active == 0){                                 
-                this.active = this.paesi.length -1;
-            }
+            if (this.active > 0) {--this.active;}
+            else if (this.active == 0) {this.active = this.paesi.length -1;}
         },
         swipeDown(){
-            if (this.active < this.paesi.length -1){
-                ++this.active;
-            }
-            else if (this.active == this.paesi.length -1){                      
-                this.active = 0;
-            }
+            if (this.active < this.paesi.length -1) {++this.active;}
+            else if (this.active == this.paesi.length -1) {this.active = 0;}
         },
+
         swipeAuto(){
-            --this.active;
+            setInterval(() => {
+                if (this.active < this.paesi.length -1) {++this.active;}
+                else if (this.active == this.paesi.length -1) { this.active = 0;}
+            }, 1000)      
         },  
     },
 
