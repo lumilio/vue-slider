@@ -107,3 +107,11 @@
 #swipe-down-button{
     bottom: 10px;
 }
+
+.start{
+    background-color: green;
+}
+
+.stop{
+    background-color: red;
+}

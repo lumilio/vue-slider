@@ -20,7 +20,6 @@
 
 
 
-
                 <div id="box-mainpic">
                     <div v-for='(paese, index) in paesi' v-bind:class ="(index == active)?'choice':''" class="big-photo">
                         <img v-bind:src="paese.foto" alt="">
@@ -42,7 +41,11 @@
                     <button v-on:click="swipeUp" id="swipe-up-button"><i class="fas fa-chevron-up"></i></i></button>
                     <button v-on:click="swipeDown" id="swipe-down-button"><i class="fas fa-chevron-down"></i></button> 
                 </div>
-                <button v-on:click="swipeAuto">xxx</button>
+
+
+
+
+                <button v-on:click="swipeAuto" v-bind:class ='buttonClass'>{{buttonText}}</button>
                 
 
 
