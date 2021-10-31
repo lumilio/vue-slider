@@ -60,6 +60,9 @@ const app = new Vue({
             else if (this.active == this.paesi.length -1){                      
                 this.active = 0;
             }
+        },
+        swipeAuto(){
+            --this.active;
         },  
     },
 
