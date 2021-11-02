@@ -52,50 +52,24 @@ const app = new Vue({
             if (app.active > 0) {--app.active;}
             else if (app.active == 0) {app.active = app.paesi.length -1;}
         },
+
         swipeDown: function () {
             if (app.active < app.paesi.length -1) {++app.active;}
             else if (app.active == app.paesi.length -1) {app.active = 0;}
         },
 
+        clockSwiper:function () {
+            app.active++
+            if (app.active == app.paesi.length) {app.active = 0;} 
+            else if (app.active < 0) {app.active = app.paesi.length;}
+        },
 
-
-
-        swipeAuto: function() {
-            
-            if (app.clicked == false) {
-                app.clicked = true;
-                app.buttonClass = "stop"
-                app.buttonText = "STOP"
-            } else {
-                app.clicked = false
-                app.buttonClass = "start"
-                app.buttonText = "START"
-            }
-        
-            let clock = setInterval(function () {
-                if (app.clicked == true) {
-
-                    app.active++
-                    if (app.active == app.paesi.length) {
-                        app.active = 0;
-                    } else if (app.active < 0) {
-                        app.active = app.paesi.length;
-                    }
-
-
-                } else {
-                    clearInterval(clock)
-                }
-
-
-            }, 1000)
-            
-          
-        },  
     },
 
 
-
+    mounted(){
+        setInterval(this.clockSwiper, 1000)
+    }
 
 })
 
